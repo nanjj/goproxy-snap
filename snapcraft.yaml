@@ -1,0 +1,23 @@
+name: goproxy
+version: 0.1.1
+grade: stable
+summary: A tiny http proxy
+description: |
+  Goproxy is a tiny http proxy in go
+confinement: strict
+apps:
+  goproxy:
+    command: 'bin/goproxy.wrapper'
+    plugs: [network-bind, network, content]
+    daemon: simple
+    stop-timeout: 900s
+parts:
+  goproxy:
+    plugin: go
+    go-packages:
+      - github.com/nanjj/goproxy-snap/goproxy
+  snap-wrappers:
+    plugin: dump
+    source: .
+    organize:
+      goproxy.wrapper: bin/goproxy.wrapper

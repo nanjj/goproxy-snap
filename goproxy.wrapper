@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+$SNAP/bin/goproxy -addr 127.0.0.1:8888
