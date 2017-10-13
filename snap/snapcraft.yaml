@@ -8,9 +8,8 @@ confinement: strict
 apps:
   goproxy:
     command: 'bin/goproxy.wrapper'
-    plugs: [network-bind, network, content]
+    plugs: [network-bind, network]
     daemon: simple
-    stop-timeout: 900s
 parts:
   goproxy:
     plugin: go
